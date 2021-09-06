@@ -11,15 +11,15 @@
     "id": 2,
     "title": "Download your programmes to watch on the go.",
     "subTitle": "Save your data and watch all your favourites offline.",
-    "image": "/images/misc/home-mobile.jpg",
-    "alt": "Tiger King on Netflix",
+    "image": "/images/misc/strangerthings.jpg",
+    "alt": "Stranger Things on Netflix",
     "direction": "row-reverse"
   },
   {
     "id": 3,
     "title": "Watch everywhere.",
     "subTitle": "Stream unlimited films and TV programmes on your phone, tablet, laptop and TV without paying more.",
-    "image": "/images/misc/home-imac.jpg",
+    "image": "/images/misc/moneyheist.jpg",
     "alt": "Money Heist on Netflix",
     "direction": "row"
   }
