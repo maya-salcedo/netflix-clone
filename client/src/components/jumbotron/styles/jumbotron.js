@@ -36,3 +36,7 @@ export const SubTitle = styled.h2`
     font-size: 18px;
   }
 `;
+
+export const Image = styled.img`
+  max-width: 80%;
+`;
