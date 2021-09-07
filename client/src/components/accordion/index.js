@@ -8,6 +8,8 @@ import {
   Item,
   Title,
 } from './styles/accordion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const ToggleContext = createContext();
 
@@ -43,9 +45,9 @@ Accordion.Header = function AccordionHeader({ children, ...restProps }) {
     <Header onClick={() => setToggleShow(!toggleShow)} {...restProps}>
       {children}
       {toggleShow ? (
-        <img src="/images/icons/close-sign.png" alt="close" />
+        <FontAwesomeIcon icon={faTimes} />
       ) : (
-        <img src="/images/icons/plus-sign.png" alt="open" />
+        <FontAwesomeIcon icon={faPlus} />
       )}
     </Header>
   );
