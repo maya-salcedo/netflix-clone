@@ -14,7 +14,7 @@ OptForm.Input = function OptFormInput({ ...restProps }) {
 OptForm.Button = function OptFormButton({ children, ...restProps }) {
   return (
     <Button {...restProps}>
-      {children} <FontAwesomeIcon icon={faGreaterThan} />
+      {children} <FontAwesomeIcon icon={faGreaterThan} className="icon" />
     </Button>
   );
 };
