@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FooterContainer } from './footer';
+import { SelectProfileContainer } from './profiles';
 
 export default function BrowseContainer() {
   const [profile, setProfile] = useState({});
@@ -14,6 +15,6 @@ export default function BrowseContainer() {
       <FooterContainer />
     </>
   ) : (
-    <SelectProfileContainer />
+    <SelectProfileContainer user={user} setProfile={setProfile} />
   );
 }
