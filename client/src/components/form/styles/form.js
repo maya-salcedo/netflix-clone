@@ -11,7 +11,7 @@ export const Text = styled.h1``;
 
 export const TextSmall = styled.h2``;
 
-export const Link = styled(ReachRouterLink);
+export const Link = styled(ReachRouterLink)``;
 
 export const Input = styled.input``;
 
