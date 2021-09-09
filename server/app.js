@@ -7,7 +7,7 @@ const cors = require('cors');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const testServerRouter = require('./routes/testServer');
-require('dotenv').config({ path: '../.env' });
+
 const app = express();
 
 // view engine setup
