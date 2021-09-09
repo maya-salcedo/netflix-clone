@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import dotenv from 'dotenv';
 import './index.css';
 import App from './App';
 import { GlobalStyle } from './global-styles';
 import { FirebaseContext } from './context/firebase';
 
+dotenv.config();
+
 const config = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTHDOMAIN,
-  projectId: process.env.REACT_APP_PROJECTID,
-  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
-  appId: process.env.REACT_APP_APPID,
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTHDOMAIN,
+  projectId: process.env.PROJECTID,
+  storageBucket: process.env.STORAGEBUCKET,
+  messagingSenderId: process.env.MESSAGINGSENDERID,
+  appId: process.env.APPID,
 };
 
 const firebase = window.firebase.initializeApp(config);
