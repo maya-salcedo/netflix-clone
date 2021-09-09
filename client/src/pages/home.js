@@ -4,6 +4,7 @@ import { FaqsContainer } from '../containers/faqs';
 import { FooterContainer } from '../containers/footer';
 import { HeaderContainer } from '../containers/header';
 import { JumbotronContainer } from '../containers/jumbotron';
+import Variables from '../utils/variables';
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <JumbotronContainer />
       <FaqsContainer />
       <FooterContainer />
+      <Variables />
     </>
   );
 }
