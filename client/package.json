@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "proxy": "http://localhost:9000/",
   "type": "module",
   "private": true,
   "dependencies": {

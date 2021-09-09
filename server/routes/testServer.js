@@ -1,9 +1,11 @@
-var express = require('express');
+const express = require('express');
+const router = express.Router();
 
-var router = express.Router();
-
-router.get('/', async (req, res, next) => {
-  res.send('API is working properly. I am from server aka backend! Yeah');
+router.get('/', function (req, res, next) {
+  console.log(process.env.AUTH_DOMAIN);
+  return res.json({
+    apiKey: process.env.AUTH_DOMAIN,
+  });
 });
 
 module.exports = router;
