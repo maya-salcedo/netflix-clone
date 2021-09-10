@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link as ReachRouterLink } from 'react-router-dom';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 import {
   Background,
   ButtonLink,
@@ -10,6 +14,9 @@ import {
   Link,
   Logo,
   PlayButton,
+  Search,
+  SearchIcon,
+  SearchInput,
   Text,
 } from './styles/header';
 
@@ -30,6 +37,28 @@ Header.Logo = function HeaderLogo({ to, ...restProps }) {
     <ReachRouterLink to={to}>
       <Logo {...restProps} />
     </ReachRouterLink>
+  );
+};
+
+Header.Search = function HeaderSearch({
+  searchTerm,
+  setSearchTerm,
+  ...restProps
+}) {
+  const [searchActive, setSearchActive] = useState(false);
+
+  return (
+    <Search {...restProps}>
+      <SearchIcon onClick={() => setSearchActive(!searchActive)}>
+        <FontAwesomeIcon icon={faSearch} className="icon" />
+      </SearchIcon>
+      <SearchInput
+        value={searchTerm}
+        onChange={({ target }) => setSearchTerm(target.value)}
+        placeholder="Search films and series"
+        active={searchActive}
+      ></SearchInput>
+    </Search>
   );
 };
 

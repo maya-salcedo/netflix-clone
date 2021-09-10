@@ -7,6 +7,7 @@ import * as ROUTES from '../constants/routes';
 export default function BrowseContainer() {
   const [profile, setProfile] = useState({});
   const [category, setCategory] = useState('series');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const user = {
     displayName: 'Maya',
@@ -35,6 +36,12 @@ export default function BrowseContainer() {
             >
               Films
             </Header.Link>
+          </Header.Group>
+          <Header.Group>
+            <Header.Search
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
           </Header.Group>
         </Header.Frame>
         <Header.Feature>
