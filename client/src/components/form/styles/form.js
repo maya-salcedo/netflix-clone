@@ -53,7 +53,7 @@ export const Link = styled(ReachRouterLink)`
 
 export const Input = styled.input`
   background: #333;
-  border-radius: 4px:
+  border-radius: 4px;
   border: 0;
   color: #fff;
   height: 50px;
