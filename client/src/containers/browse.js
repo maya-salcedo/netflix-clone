@@ -26,7 +26,7 @@ export default function BrowseContainer() {
     }, 3000);
   }, [user]);
 
-  return !profile.displayName ? (
+  return profile.displayName ? (
     <>
       {loading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />}
       <Header src="joker" dontShowOnSmallViewPort>
