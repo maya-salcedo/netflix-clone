@@ -4,9 +4,12 @@ import {
   Background,
   ButtonLink,
   Container,
+  Feature,
+  FeatureCallOut,
   Group,
   Link,
   Logo,
+  PlayButton,
   Text,
 } from './styles/header';
 
@@ -40,4 +43,19 @@ Header.Link = function HeaderFunction({ children, ...restProps }) {
 
 Header.ButtonLink = function HeaderButtonLink({ children, ...restProps }) {
   return <ButtonLink {...restProps}>{children}</ButtonLink>;
+};
+
+Header.Feature = function HeaderFeature({ children, ...restProps }) {
+  return <Feature {...restProps}>{children}</Feature>;
+};
+
+Header.FeatureCallOut = function HeaderFeatureCallOut({
+  children,
+  ...restProps
+}) {
+  return <FeatureCallOut {...restProps}>{children}</FeatureCallOut>;
+};
+
+Header.PlayButton = function HeaderPlayButton({ children, ...restProps }) {
+  return <PlayButton {...restProps}>{children}</PlayButton>;
 };
