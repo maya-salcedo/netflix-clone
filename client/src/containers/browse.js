@@ -47,11 +47,8 @@ export default function BrowseContainer() {
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />
-            <Header.Search
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-            />
             <Header.Profile>
+              <Header.Picture src={user.photoURL} />
               <Header.Dropdown>
                 <Header.Group>
                   <Header.Picture src={user.photoURL} />
