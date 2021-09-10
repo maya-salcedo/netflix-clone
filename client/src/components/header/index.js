@@ -8,17 +8,20 @@ import {
   Background,
   ButtonLink,
   Container,
+  Dropdown,
   Feature,
   FeatureCallOut,
   Group,
   Link,
   Logo,
   PlayButton,
+  Profile,
   Search,
   SearchIcon,
   SearchInput,
   Text,
 } from './styles/header';
+import { Picture } from '../profiles/styles/profiles';
 
 export default function Header({ bg = true, children, ...restProps }) {
   return bg ? <Background {...restProps}>{children}</Background> : children;
@@ -87,4 +90,16 @@ Header.FeatureCallOut = function HeaderFeatureCallOut({
 
 Header.PlayButton = function HeaderPlayButton({ children, ...restProps }) {
   return <PlayButton {...restProps}>{children}</PlayButton>;
+};
+
+Header.Profile = function HeaderProfile({ children, ...restProps }) {
+  return <Profile {...restProps}>{children}</Profile>;
+};
+
+Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
+  return <Dropdown {...restProps}>{children}</Dropdown>;
+};
+
+Header.Picture = function HeaderPicture({ src, ...restProps }) {
+  return <Picture {...restProps} src={`/images/users/${src}.png`} />;
 };

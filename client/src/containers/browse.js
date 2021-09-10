@@ -1,20 +1,25 @@
-import React, { useState } from 'react';
-import { Header } from '../components';
+import React, { useContext, useState } from 'react';
+
+import { FirebaseContext } from '../context/firebase';
 import { FooterContainer } from './footer';
 import { SelectProfileContainer } from './profiles';
 import * as ROUTES from '../constants/routes';
+
+import { Header } from '../components';
 
 export default function BrowseContainer() {
   const [profile, setProfile] = useState({});
   const [category, setCategory] = useState('series');
   const [searchTerm, setSearchTerm] = useState('');
 
+  const { firebase } = useContext(FirebaseContext);
+
   const user = {
     displayName: 'Maya',
     photoURL: '1',
   };
 
-  return profile.displayName ? (
+  return !profile.displayName ? (
     <>
       <Header src="joker" dontShowOnSmallViewPort>
         <Header.Frame>
@@ -42,6 +47,23 @@ export default function BrowseContainer() {
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />
+            <Header.Search
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
+            <Header.Profile>
+              <Header.Dropdown>
+                <Header.Group>
+                  <Header.Picture src={user.photoURL} />
+                  <Header.Link>{user.displayName}</Header.Link>
+                </Header.Group>
+                <Header.Group>
+                  <Header.Link onClick={() => firebase.auth().signOut()}>
+                    Sign Out
+                  </Header.Link>
+                </Header.Group>
+              </Header.Dropdown>
+            </Header.Profile>
           </Header.Group>
         </Header.Frame>
         <Header.Feature>
