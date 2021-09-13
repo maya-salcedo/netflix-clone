@@ -94,7 +94,7 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
           <FontAwesomeIcon icon={faTimes} />
         </FeatureClose>
 
-        <Group margin="30px 0" flex-direction="row" alignItems="center">
+        <Group margin="30px 0" flex-direction="row" alignItems="left">
           <Maturity rating={itemFeature.maturity}>
             {itemFeature.maturity < 12 ? 'PG' : itemFeature.maturity}
           </Maturity>
