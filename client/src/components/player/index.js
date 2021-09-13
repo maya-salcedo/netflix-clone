@@ -1,6 +1,10 @@
 import React, { createContext, useContext, useState } from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Container, Inner, Overlay } from './styles/player';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+
+import { Button, Close, Container, Inner, Overlay } from './styles/player';
 
 export const PlayerContext = createContext();
 
@@ -24,6 +28,9 @@ Player.Video = function PlayerVideo({ ...restProps }) {
             <video id="netflix-player" controls>
               <source src="/videos/video.mp4" type="video/mp4" />
             </video>
+            <Close>
+              <FontAwesomeIcon icon={faTimesCircle} className="icon" />
+            </Close>
           </Inner>
         </Overlay>,
         document.body
