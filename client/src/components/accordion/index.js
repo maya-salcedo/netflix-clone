@@ -1,4 +1,8 @@
 import React, { createContext, useContext, useState } from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faPlus } from '@fortawesome/free-solid-svg-icons';
+
 import {
   Body,
   Container,
@@ -8,8 +12,6 @@ import {
   Item,
   Title,
 } from './styles/accordion';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const ToggleContext = createContext();
 
