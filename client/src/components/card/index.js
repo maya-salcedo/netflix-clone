@@ -1,8 +1,27 @@
-import React, { createContext, useState } from 'react';
-const FeatureContext = createContext();
+import React, { createContext, useContext, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
+import {
+  Container,
+  Content,
+  Entities,
+  Feature,
+  FeatureClose,
+  FeatureText,
+  FeatureTitle,
+  Group,
+  Image,
+  Item,
+  Maturity,
+  Meta,
+  Subtitle,
+  Text,
+  Title,
+} from './styles/card';
+
+const FeatureContext = createContext();
 
 export default function Card({ children, ...restProps }) {
   const [showFeature, setShowFeature] = useState(false);
@@ -10,7 +29,7 @@ export default function Card({ children, ...restProps }) {
 
   return (
     <FeatureContext.Provider
-      value={{ showFeature, setShowFeature, itemFeature, setShowFeature }}
+      value={{ showFeature, setShowFeature, itemFeature, setItemFeature }}
     >
       <Container {...restProps}>{children}</Container>
     </FeatureContext.Provider>
@@ -18,34 +37,46 @@ export default function Card({ children, ...restProps }) {
 }
 
 Card.Group = function CardGroup({ children, ...restProps }) {
-  <Group {...restProps}>{children}</Group>;
+  return <Group {...restProps}>{children}</Group>;
 };
 Card.Title = function CardTitle({ children, ...restProps }) {
-  <Title {...restProps}>{children}</Title>;
+  return <Title {...restProps}>{children}</Title>;
 };
 
 Card.Entities = function CardEntities({ children, ...restProps }) {
-  <Entities {...restProps}>{children}</Entities>;
+  return <Entities {...restProps}>{children}</Entities>;
 };
 
 Card.Item = function CardGroup({ item, children, ...restProps }) {
-  <Item {...restProps}>{children}</Item>;
+  const { setShowFeature, setItemFeature } = useContext(FeatureContext);
+
+  return (
+    <Item
+      onClick={() => {
+        setItemFeature(item);
+        setShowFeature(true);
+      }}
+      {...restProps}
+    >
+      {children}
+    </Item>
+  );
 };
 
 Card.Image = function CardImage({ ...restProps }) {
-  <Image {...restProps} />;
+  return <Image {...restProps} />;
 };
 
 Card.Meta = function CardMeta({ children, ...restProps }) {
-  <Meta {...restProps}>{children}</Meta>;
+  return <Meta {...restProps}>{children}</Meta>;
 };
 
 Card.Subtitle = function CardSubtitle({ children, ...restProps }) {
-  <Subtitle {...restProps}>{children}</Subtitle>;
+  return <Subtitle {...restProps}>{children}</Subtitle>;
 };
 
 Card.Text = function CardText({ children, ...restProps }) {
-  <Text {...restProps}>{children}</Text>;
+  return <Text {...restProps}>{children}</Text>;
 };
 
 Card.Feature = function CardFeature({ children, category, ...restProps }) {
@@ -59,9 +90,7 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
       <Content>
         <FeatureTitle>{itemFeature.title}</FeatureTitle>
         <FeatureText>{itemFeature.description}</FeatureText>
-        <FeatureClose>
-          {' '}
-          onClick={() => setShowFeature(false)}
+        <FeatureClose onClick={() => setShowFeature(false)}>
           <FontAwesomeIcon icon={faTimes} />
         </FeatureClose>
 

@@ -7,7 +7,7 @@ import * as ROUTES from '../constants/routes';
 
 import { Card, Header, Loading } from '../components';
 
-export default function BrowseContainer() {
+export default function BrowseContainer({ slides }) {
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState('series');
@@ -25,13 +25,13 @@ export default function BrowseContainer() {
     setTimeout(() => {
       setLoading(false);
     }, 3000);
-  }, [user]);
+  }, []);
 
   useEffect(() => {
     setSlideRows(slides[category]);
   }, [slides, category]);
 
-  return profile.displayName ? (
+  return !profile.displayName ? (
     <>
       {loading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />}
       <Header src="joker" dontShowOnSmallViewPort>
@@ -96,7 +96,7 @@ export default function BrowseContainer() {
               {slideItem.data.map((item) => (
                 <Card.Item key={item.docId} item={item}>
                   <Card.Image
-                    src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}
+                    src={`/images/${category}/${item.genre}/${item.slug}/large.jpg`}
                   />
                   <Card.Meta>
                     <Card.Subtitle>{item.title}</Card.Subtitle>
