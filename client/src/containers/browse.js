@@ -6,7 +6,7 @@ import { FooterContainer } from './footer';
 import { SelectProfileContainer } from './profiles';
 import * as ROUTES from '../constants/routes';
 
-import { Card, Header, Loading } from '../components';
+import { Card, Header, Loading, Player } from '../components';
 
 export default function BrowseContainer({ slides }) {
   const [profile, setProfile] = useState({});
@@ -120,7 +120,10 @@ export default function BrowseContainer({ slides }) {
               ))}
             </Card.Entities>
             <Card.Feature category={category}>
-              <p>Im the feature</p>
+              <Player>
+                <Player.Button />
+                <Player.Video />
+              </Player>
             </Card.Feature>
           </Card>
         ))}
