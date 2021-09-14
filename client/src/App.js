@@ -2,10 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 
+import { useAuthListener } from './hooks';
+
 import * as ROUTES from './constants/routes';
 import { Browse, Home, Signin, Signup } from './pages';
 
 function App() {
+  const { user } = useAuthListener();
+  console.log(user);
+
   return (
     <Router>
       <Switch>
