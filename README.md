@@ -1,6 +1,7 @@
 # Netflix Clone
 
-# Technologies used: ## React, Firebase, styled-components##
+# Technologies used: 
+## React, Firebase, styled-components##
 
 # Home Page
 ![Netflix Clone 1](https://user-images.githubusercontent.com/68334235/133206160-e05e0710-cac4-4f08-9389-7901765b9dae.gif)
