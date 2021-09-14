@@ -45,7 +45,7 @@ export default function BrowseContainer({ slides }) {
     }
   }, [searchTerm]);
 
-  return !profile.displayName ? (
+  return profile.displayName ? (
     <>
       {loading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />}
       <Header src="joker" dontShowOnSmallViewPort>
